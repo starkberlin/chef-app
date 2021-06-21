@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<title>chetinad</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-blue w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Hotel<br>Chetinad</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a> 
+    <a href="#Varieties" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Varieties</a> 
+    <a href="#Services" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Services</a> 
+    <a href="#Chef" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Chef</a> 
+    <a href="#Contact" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Contact</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-blue w3-xlarge w3-padding">
+  <a href="javascript:void(0)" class="w3-button w3-blue w3-margin-right" onclick="w3_open()">☰</a>
+  <span>Company Name</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="Varieties">
+    <h1 class="w3-jumbo"><b>Royal Endurance of Catering Services & Hotel</b></h1>
+    <h1 class="w3-xxxlarge w3-text-green"><b>Varieties.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+  </div>
+  
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="{% static 'images/image01.jpg' %}" style="width:100%" onclick="onClick(this)" alt="South Indian Variety Rice">
+      <img src="{% static 'images/image06.jpg' %}" style="width:100%" onclick="onClick(this)" alt="Punjabi Mini-dinner">
+      <img src="{% static 'images/image09.jpg' %}" style="width:100%" onclick="onClick(this)" alt="Chinese Soupy Noodles">
+    </div>
+
+    <div class="w3-half">
+      <img src="{% static 'images/image08.jpg' %}" style="width:100%" onclick="onClick(this)" alt="Tamil Nadu Masala Dhosa">
+      <img src="{% static 'images/image03.jpg' %}" style="width:100%" onclick="onClick(this)" alt="Wedding Couple Spl Dinner ">
+      <img src="{% static 'images/image10.jpg' %}" style="width:100%" onclick="onClick(this)" alt="Spicy Chicken Fry">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Services -->
+  <div class="w3-container" id="Services" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-green"><b>Services.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>Food courts present an array of choices and flavors in quick-service formats. We operate Food Courts at major IT locations in Chennai.</p>
+    <p>We are fully-equipped to provide healthcare institutions with menus that will conform with their dietary requirements. In-house dieticians construct meals to suit client specifications.</p>
+    <p>We provide end to end facility management services and specialised menus tailored for active retirement communities. Our facilities management services include security, housekeeping, laundry and technical services.</p>
+    <p>A well-thought out dietary plan specially tailored for senior citizens with variety to suit different palates and health conditioned is provided. Our well-trained staff offer warm and friendly service.</p>
+  </div>
+  
+  <!-- Chef -->
+  <div class="w3-container" id="Chef" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text-green"><b>Chef.</b></h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>The best Cooking Chef in Our City.</p>
+    <p>Cooking is not difficult. Everyone has taste, even if they don't realize it. Even if you're not a great chef, there's nothing to stop you understanding the difference between what tastes good and what doesn't.
+    </p>
+    <p><b>Our Chef's thoughtfully inspires</b>:</p>
+  </div>
+
+  <!-- The Team -->
+  <div class="w3-row-padding w3-grayscale">
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="{% static 'images/chef02.jpg' %}" alt="John" style="width:100%">
+        <div class="w3-container">
+          <h3>Lena Paul</h3>
+          <p class="w3-opacity">Passionate Chef</p>
+          <p>As I'm a home cook and love to read about food, but I'm not trained as a chef. I'm just really into cooking and passionate about it.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="{% static 'images/chef01.jpg' %}" alt="Jane" style="width:100%">
+        <div class="w3-container">
+          <h3>Christina Tosi</h3>
+          <p class="w3-opacity">Chef Master</p>
+          <p>As a Chief, as a chef, I've learned that failure will always come. I've learned to give it a big squeeze, smile at it, humble myself to it and then use it as a springboard to send me on my way to strength, success, and fulfillment.</p>
+        </div>
+      </div>
+    </div>
+    <div class="w3-col m4 w3-margin-bottom">
+      <div class="w3-light-grey">
+        <img src="{% static 'images/chef04.jpg' %}" alt="Mike" style="width:100%">
+        <div class="w3-container">
+          <h3>Gordon Ramsay</h3>
+          <p class="w3-opacity">Chef</p>
+          <p>If you want to become a great chef, you have to work with great chefs. And that's exactly what I did.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="Contact">
+    <h1 class="w3-xxxlarge w3-text-green">Contact.</h1>
+    <hr style="width:50px;border:5px solid red" class="w3-round">
+    <p>We offer full-service catering for any event, large or small. We understand your needs and we will cater the food to satisfy the biggerst criteria of them all, both look and taste. Do not hesitate to contact us.</p>
+    <p class="w3-text-blue-green w3-large"><b>Chetinad Hotel Catering Service, 34th Raju Avenue St, 600628 Chennai, Tamil Nadu.</b></p>
+    <p>You can also contact us by phone 043-583142-2363 or email hotelchetinad@catering.com, or you can send us a message here:</p>
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2020-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+<!-- End page content -->
+</div>
+<!-- W3.CSS Container -->
+<div class="w3-light-grey w3-container w3-padding-32" style="margin-top:75px;padding-right:58px"><p class="w3-right">Designed by hp </p></div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
